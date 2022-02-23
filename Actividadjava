@@ -1,0 +1,44 @@
+package EjerciciosDeClase;
+
+public class Actividad6 {
+
+	public static void main(String[] args) {
+		
+		int[][] matriz = new int[10][10];
+		
+		// Crea y muestra el array
+		for (int fila = 0; fila < matriz.length; fila++) {
+			for (int columna = 0; columna < matriz[fila].length; columna++) {
+				int numero = (int) (Math.random()*300+200);
+				matriz[fila][columna] = numero;
+				System.out.printf("%5d", matriz[fila][columna]);
+			}
+			System.out.println("");
+		}
+		
+		// Recorrido diagonal
+		int suma= 0;
+		int maximo = 200;
+	    int minimo = 300;
+	    System.out.println("");
+	    System.out.println("Números a comparar y sumar: ");
+	    
+	    for(int i = 0; i < 10; i++) {
+	      int numero = matriz[i][i];
+	      System.out.print(numero + " ");
+	      if (numero > maximo) {
+	        maximo = numero;
+	      }
+	      if (numero < minimo) {
+	        minimo = numero;
+	      }
+	      suma += numero;
+	    }
+	    System.out.println("");
+	    System.out.println("\nMáximo: " + maximo);
+	    System.out.println("Mínimo: " + minimo);
+	    System.out.println("Media: " + ((double)suma / 10));
+
+	}
+
+}
